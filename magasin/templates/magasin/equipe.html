@@ -1,0 +1,14 @@
+{% block content %} 
+  <div style="text-align: center;">
+    <h2>Les projets</h2>
+  </div> 
+
+  <table style="border: 2px solid #000;">
+    {% for article in list %}
+    <tr>
+      <td>{{ article.name }}</td>
+      <td>{{ article.personnel }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

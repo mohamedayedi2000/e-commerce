@@ -1,0 +1,60 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+  }
+  
+  figcaption {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  p {
+    margin: 0;
+  }
+</style>
+
+<div class="col-12">
+  <table>
+    {% for article in list %}
+      {% if forloop.counter0|divisibleby:4 %}
+        <tr>
+      {% endif %}
+      <td>
+        <img src="/media/{{ article.img }}" class="rounded float-start" alt="">
+        <figcaption class="figure-caption">
+          <p>{{ article.title }}</p>
+        </figcaption>
+        <p>{{ article.title }}</p>
+        <p>{{ article.content }}</p>
+      </td>
+      {% if forloop.counter|divisibleby:4 or forloop.last %}
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

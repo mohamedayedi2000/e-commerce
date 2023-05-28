@@ -1,0 +1,69 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+
+<style>
+  /* Center the heading */
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  /* Apply margin and padding to the container */
+  #container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Style the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Style the table cells */
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  /* Alternate background colors for rows */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+
+
+<div>
+  <h2>Les Services</h2>
+</div>
+
+<div id="container">
+  <table>
+    {% for article in list %}
+      {% if forloop.counter0|divisibleby:4 %}
+        <tr>
+      {% endif %}
+      <td>
+        <p><strong>Type:</strong> {{ article.type }}</p>
+        <p><strong>Name:</strong> {{ article.name }}</p>
+        <p><strong>Description:</strong> {{ article.description }}</p>
+        <p><strong>Project:</strong> {{ article.project }}</p>
+      </td>
+      {% if forloop.counter|divisibleby:4 or forloop.last %}
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

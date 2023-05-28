@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #conteneur {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    #header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #header a {
+      text-decoration: none;
+      color: #333;
+    }
+    
+    .animated-text {
+      display: inline-block;
+      animation: text-animation 3s infinite;
+    }
+    
+    @keyframes text-animation {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px;
+    }
+    
+    #contenu {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="conteneur"> 
+    <h1 id="header"><a href="#" title="Colored Design - Accueil"><span class="animated-text">ArtyProd</span></a></h1>
+    <nav>
+      <ul id="menu">
+        <li><a href="/magasin/">Artyprod</a></li>
+        <li><a href="#">application n°2</a></li>
+        <li><a href="#">application n°3</a></li>
+      </ul>
+    </nav>
+    <br>
+    <div id="contenu">
+
+    </div>
+  </div>
+</body>
+</html>

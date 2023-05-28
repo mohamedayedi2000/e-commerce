@@ -1,0 +1,48 @@
+{% extends 'magasin/base.html' %}
+
+{% block styles %}
+<style>
+    .col-md-12 {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %} 
+<div class="col-md-12 text-center">
+    <h2>List Fournisseur</h2>
+</div> 
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+    </tr>
+    {% for article in list %}
+    <tr>
+        <td>{{ article.nom }}</td>
+        <td>{{ article.adresse }}</td>
+        <td>{{ article.email }}</td>
+        <td>{{ article.telephone }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
